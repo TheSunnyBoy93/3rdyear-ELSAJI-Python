@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
     ## Menu à renseigner pour l'utilitisateur
     print("****\-Scanner de ports ELSAJI/****\n")
-    Host = raw_input("Entrer l'adresse ip: ")
+    Host = input("Entrer l'adresse ip: ")
     Portd = eval(input("Entrer le port de debut: "))
     Portf = eval(input("Entrer le port de fin: "))
 
@@ -95,12 +95,12 @@ if __name__ == "__main__":
     else:
         Affiche_port(report)
         ## Demande d'enregistrement du resultat
-    choix = raw_input("Voulez vous enregistrer le resultat: (O)ui | (N)on: ")
+    choix = input("Voulez vous enregistrer le resultat: (O)ui | (N)on: ")
     if(choix.upper() == "O"):
         Enregistrer(report)
         print ("Resultat enregistre avec succes !")
 
-Temp = raw_input("Appuyez sur une touche pour continuer...")
+#Temp = input("Appuyez sur une touche pour continuer...")
 
 
 

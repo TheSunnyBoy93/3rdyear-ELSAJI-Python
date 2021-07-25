@@ -9,7 +9,7 @@ def gen_mdp (nbre_caracter):
     caracter_list = string.ascii_letters+string.digits#+string.punctuation
     pwd = ""
     for i in range(nbre_caracter):
-        pwd+=caracter_list[random.randint(0, len(caracter_list)-1)]
+        pwd += caracter_list[random.randint(0, len(caracter_list)-1)]
     return (pwd)
 
 # hashé le mdp genere aleatorement

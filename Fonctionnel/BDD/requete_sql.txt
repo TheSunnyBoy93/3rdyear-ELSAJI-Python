@@ -1,0 +1,32 @@
+##CREATION DE LA BDD
+CREATE DATABASE python;
+
+## CREATION DE LA TABLE 
+CREATE TABLE `python`.`utilisateurs` ( 
+`id_user` INT UNSIGNED NOT NULL AUTO_INCREMENT , 
+`nom` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , 
+`prenom` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , 
+`login` VARCHAR(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , 
+`mail` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , 
+`mdp_hash` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , 
+`ville` VARCHAR(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , 
+`status` VARCHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , 
+PRIMARY KEY (`id_user`)) 
+ENGINE = InnoDB;
+
+##CREATION USER avec TOUS LES DROITS
+CREATE USER 'abdalaye'@'%' IDENTIFIED BY USING '***';
+GRANT ALL PRIVILEGES ON *.* TO 'abdalaye'@'%' REQUIRE NONE WITH GRANT 
+OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 
+MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+GRANT ALL PRIVILEGES ON `python`.* TO 'abdalaye'@'%';
+
+
+##INSERER DES DONNEES DANS LA TABLE
+INSERT INTO `utilisateurs` (`id_user`, `nom`, `prenom`, `login`, `mail`, 
+`mdp_hash`, `ville`, `status`, `date_creation` ) VALUES ('curtis', 'jacques', 'jcurtis', 
+'jcurtis@elsaji.fr', 'jhgsGSJJSP765544256sdhjid', 'Rennes', 'Ac', NULL)
+ 
+ ###MODIFIER UN ELEMENT D'UNE TABLE ou ajouter
+ALTER TABLE `utilisateurs` CHANGE `status` `status` VARCHAR(2) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL;
+ALTER TABLE `utilisateurs` ADD `date_creation` DATETIME NOT NULL AFTER `status`;
