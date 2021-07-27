@@ -4,7 +4,7 @@ import string
 import hashlib
 import csv
 
-#generation mdp alea
+#generation mdp aleatoire
 def gen_mdp (nbre_caracter):
     caracter_list = string.ascii_letters+string.digits#+string.punctuation
     pwd = ""
@@ -12,7 +12,7 @@ def gen_mdp (nbre_caracter):
         pwd += caracter_list[random.randint(0, len(caracter_list)-1)]
     return (pwd)
 
-# hashé le mdp genere aleatorement
+# hashé le mdp genere aleatoirement
 def hash_mdp(pwd):
     salt = "un salt" ##info redondante pour le MD5(reversible)
     hash_passwd = hashlib.md5(pwd.encode()+salt.encode()).hexdigest()
@@ -28,10 +28,10 @@ def verif_mdp(input_pwd,generate_pwd):
 
 ## programme principal
 #long_passwd = input("Veillez entre la longueur de votre mdp entre 8 et 12 inclus : \n")
-choix = eval(input("veillez choisir 1 pour continuer ou 0 pour quitter : "))
+choix = eval(input("veillez choisir 1 pour generer un mot de passe ou 0 pour quitter : "))
 while choix != 1 and choix != 0 :
     print("choix invalid, veillez recommencer !!!")
-    choix = eval(input("veillez choisir 1 pour continuer ou 0 pour quitter : "))
+    choix = eval(input("veillez choisir 1 pour generer un mot de passe ou 0 pour quitter : "))
     if choix == 0:
         break
 else:
@@ -48,11 +48,11 @@ else:
             #break
         ##Creer un fichier pour stocker les mot de passe
         # chemin du repertoire du fichier ou sont stocher les password en
-        destFile = r"C:/Users/Abdalaye konate/OneDrive/ESGI/Projet Python/BON/Pwd_ID.csv"
+        destFile = r"Pwd_ID.csv"
         with open(destFile, 'a', newline="") as f:
             f.write("{}, {}\n".format(mdp,hashing_pwd)) ##Ajouter le mot dans le fichier csv
         #chemin du repertoire du fichier ou sont stocher les password en txt
-        destFile1 = r"C:/Users/Abdalaye konate/OneDrive/ESGI/Projet Python/BON/Pwd_ID.txt"
+        destFile1 = r"Pwd_ID.txt"
         with open(destFile1, 'a',) as f:
             f.write("{}, {}\n".format(mdp,hashing_pwd)) ##Ajouter l'empreinte dans le fichier txt
 

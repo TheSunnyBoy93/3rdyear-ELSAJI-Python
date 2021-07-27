@@ -1,5 +1,0 @@
-port filezilla serveur : 20000
-
-groupes : AC, AS avec dossier partagé "C:\Users\Loïc\Documents\FTP\"
-
-utilisateur "BOB3

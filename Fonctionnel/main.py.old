@@ -1,3 +1,4 @@
+#import option as option
 import option as option
 
 granted = False
@@ -6,10 +7,11 @@ def grant():
     granted = True
 def login(name,password,grade):
     success = False
-    file = open("C:/Users/jacqu/Reseau-GES/ELSAJI - Documents/Python/user_detail.txt","r")
+    file = open("user_detail.txt","r")
     for i in file:
          a,b,c = i.split(",")
          b = b.strip()
+         c = c.strip()
          if(a==name and b==password and c==grade):
              success = True
              break
@@ -21,15 +23,15 @@ def login(name,password,grade):
         print("wrong user name or password")
         
 def register(name,password,grade):
-    file = open("C:/Users/jacqu/Reseau-GES/ELSAJI - Documents/Python/user_detail.txt","a")
+    file = open("user_detail.txt","a")
     file.write("\n"+name+","+password+","+grade)
     grant()
-def access(option):
+def access(login1):
     global name
-    if(option=="login"):
+    if(login1=="login"):
         name = input("Entrez votre  name: ")
         password = input("Entrez votre  password: ")
-        grade = input("Entrez votre status : ")
+        grade = input("Entrez votre status AS ou AC : ")
         login(name,password,grade)
     else:
         print("Enregistrer un utilisateur ")
@@ -40,17 +42,16 @@ def access(option):
 
 def begin():
     global option
-    print("welcome to ELSAJI's programming club")
-    option = input("Login or Register (login,Reg): ")
-    if(option!="login" and option!="reg" and option!="grade"):
+    print("welcome to ELSAJI's program")
+    option = input("Login or Enregistrer (login,Enreg): ")
+    if(option!="login" and option!="enreg" and option!="grade"):
         begin()
-        
+
 begin()
+access(login1)
 
 if(granted):
     print("Welcome to ELSAJI's Programming club")
     print("### USER DETAILS ###")
     print("Username: ",name)
-    access(Menu_Principal)
-
-    
+    #access(Menu_Principal)
