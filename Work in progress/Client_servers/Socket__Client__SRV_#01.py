@@ -8,8 +8,8 @@ client.connect((adresseIP, port))  # le client se connecte avec ip et port
 print("Connecté au serveur")  # si connecter on affiche ce msg
 print("Tapez FIN pour terminer la conversation. ")  # on afficher ce msg pour terminer on tappe FIN
 message = ""
-while message.upper() != "FIN":#tant que message entrer est different de FIN on continue
-    message = input(" Tappez votre message > ")
+while message.upper() != "FIN":
+    message = input("> ")
     client.send(message.encode("utf-8"))
     reponse = client.recv(255)
     print(reponse.decode("utf-8"))

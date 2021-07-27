@@ -6,17 +6,15 @@ import hashlib
 import csv
 import socket,threading, datetime
 from pip._vendor.distlib.compat import raw_input
-#import main
+import main
 
-choix_continue = input("Tapez 'AC' pour excuter le code ou 'Q' pour quitter : ")
-def Menu_Accueil():
-        while choix_continue == 'AC':
-            print("\n********** Vocici la liste des option !!! ***********\n")
-            print("[Option 1] = Gestion utilisateurs !")
-            print("[Option 2] = Gestion FTP !")
-            print("[Option 0] = Quittez !")
-            #choix = eval(input("Veillez choisir une option : "))
-def Menu_Choix1():
+#choix_continue = input("Tapez 'AC' pour excuter le code ou 'Q' pour quitter : ")
+while grade == 'AC':
+    print("\n********** Vocici la liste des option !!! ***********\n")
+    print("[Option 1] = Gestion utilisateurs !")
+    print("[Option 2] = Gestion FTP !")
+    print("[Option 0] = Quittez !")
+
     choix = eval(input("Veillez choisir une option : "))
     if choix == 1:
         print("\n********** Vocici la liste des option !!! ***********\n")
@@ -43,7 +41,7 @@ def Menu_Choix1():
         else:
             print("Choix INVALID !!!")
             choix
-def Menu_Choix2():
+    if choix == 2:
         print("\n********** Vocici la liste des option !!! ***********\n")
         print("[Option 1] = Gestion des repertoires !")
         print("[Option 2] = Gestion des fichiers!")
@@ -63,13 +61,12 @@ def Menu_Choix2():
             choix2
         else:
             print("Choix INVALID !!!")
-            choix2
+            choix
 
     #if choix == 4:
         #print("ce programme n'est pas encore mis en place !!!")
-def Menu_Nochoix ():
     if choix == 0:
-        breakpoint()
+        break
     else:
         print("Choix INVALID !!!")
-        Menu_Principal
+        choix
