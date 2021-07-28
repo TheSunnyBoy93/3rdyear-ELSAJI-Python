@@ -61,7 +61,7 @@ while True:
         print("[Option 2] = Simuler une attaque force brute !")
         print("[Option 0] = Revenir au Menu Principal !")
         choix3 = eval(input("Veillez choisir une option : "))
-        if  choix3 == 1:
+        if choix3 == 1:
             print("\n********** Vocici la liste des option !!! ***********\n")
             print("[Option 1] = Scanner un port !")
             print("[Option 2] = Scanner une plage des ports !")
