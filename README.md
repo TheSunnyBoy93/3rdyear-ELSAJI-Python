@@ -1,8 +1,10 @@
 # Projet Cas Team_NetWay
 
-Mini-projet réalisé dans le cadre de notre 3ème année en SRC.
+Mini-projet réalisé dans le cadre de notre 3ème année en SRC par le groupe ELSAJI.
 
-Dévellopé en Python version 3
+Dévellopé en Python version 3.
+
+![alt text](https://github.com/TheSunnyBoy93/3rdyear-ELSAJI-PA/blob/main/Logo/logo%20presta.png)
 
 ## Contexte et objectif
 
